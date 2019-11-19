@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Lobby/WaitingRoom.gd" type="Script" id=1]
 
-[node name="WaitingRoom" type="Popup"]
-visible = true
+[node name="WaitingRoom" type="Popup" groups=[
+"waiting_room",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -32,7 +33,8 @@ margin_bottom = 55.0
 
 [node name="PlayerList" type="ItemList" parent="ColorRect/VBoxContainer/CenterContainer"]
 margin_left = 352.0
+margin_top = 4.0
 margin_right = 672.0
-margin_bottom = 9.0
+margin_bottom = 4.0
 rect_min_size = Vector2( 320, 0 )
 auto_height = true
