@@ -126,5 +126,6 @@ margin_bottom = 56.0
 text = "Join Game"
 
 [node name="WaitingRoomPopup" parent="." instance=ExtResource( 3 )]
+[connection signal="text_changed" from="ColorRect/VBoxContainer/CenterContainer/VBoxContainer/GridContainer/NameLineEdit" to="." method="_on_NameLineEdit_text_changed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/HostButton" to="." method="_on_HostButton_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/JoinButton" to="." method="_on_JoinButton_pressed"]
