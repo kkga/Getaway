@@ -12,9 +12,19 @@ func _ready() -> void:
 	port.text = str(Network.DEFAULT_PORT)
 
 
+func show_waiting_room():
+	waiting_room.popup_centered()
+	waiting_room.refresh_players(Network.players)
+
+
+
+# SIGNAL CALLBACKS
+
+
 func _on_HostButton_pressed() -> void:
 	Network.selected_port = int(port.text)
 	Network.create_server()
+	get_tree().call_group("host_only", "show")
 	show_waiting_room()
 
 
@@ -30,6 +40,5 @@ func _on_NameLineEdit_text_changed(_new_text: String) -> void:
 	SaveGame.save_game()
 
 
-func show_waiting_room():
-	waiting_room.popup_centered()
-	waiting_room.refresh_players(Network.players)
+func _on_StartButton_pressed() -> void:
+	Network.start_game()

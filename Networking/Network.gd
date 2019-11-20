@@ -52,6 +52,13 @@ sync func update_waiting_room():
 	get_tree().call_group("waiting_room", "refresh_players", players)
 
 
+func start_game():
+	rpc("load_world")
+
+
+sync func load_world():
+	get_tree().change_scene("res://World/World.tscn")
+
 
 func _on_connected_to_server() -> void:
 	add_to_player_list()
