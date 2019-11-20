@@ -134,6 +134,10 @@ margin_bottom = 50.0
 margin_top = 82.0
 margin_bottom = 91.0
 
+[node name="PlayerList" parent="WaitingRoomPopup/ColorRect/VBoxContainer/CenterContainer" index="0"]
+margin_top = 4.0
+margin_bottom = 4.0
+
 [node name="StartButton" parent="WaitingRoomPopup/ColorRect/VBoxContainer" index="2"]
 visible = false
 margin_top = 123.0

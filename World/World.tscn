@@ -2,10 +2,10 @@
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.235294, 0.235294, 0.235294, 1 )
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="World" type="Spatial"]
@@ -16,7 +16,7 @@ use_collision = true
 width = 200.0
 height = 1.0
 depth = 200.0
-material = SubResource( 2 )
+material = SubResource( 1 )
 
 [node name="Wall1" type="CSGBox" parent="Floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100 )
@@ -43,34 +43,34 @@ height = 20.0
 depth = 1.0
 
 [node name="CSGBox" type="CSGBox" parent="Floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -43.8492 )
 width = 7.53034
 height = 4.0
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CSGBox2" type="CSGBox" parent="Floor"]
 transform = Transform( 0.0994934, 0, 0.995038, 0, 1, 0, -0.995038, 0, 0.0994934, -12.054, 2, 58.6086 )
 width = 5.87666
 height = 4.9613
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CSGBox3" type="CSGBox" parent="Floor"]
 transform = Transform( 0.827865, 0, 0.560928, 0, 1, 0, -0.560928, 0, 0.827865, 48.4696, 2, 47.6985 )
 width = 8.04032
 height = 4.0
 depth = 1.93069
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CSGBox4" type="CSGBox" parent="Floor"]
 transform = Transform( 0.918653, 0, -0.395065, 0, 1, 0, 0.395065, 0, 0.918653, 54.8024, 2, -20.5737 )
 height = 4.0
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CSGBox5" type="CSGBox" parent="Floor"]
 transform = Transform( 0.918653, 0, -0.395065, 0, 1, 0, 0.395065, 0, 0.918653, 30.2421, 2, 1.83696 )
 width = 7.27595
 height = 8.18978
 depth = 2.11333
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="Players" type="Node" parent="."]

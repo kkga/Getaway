@@ -7,19 +7,48 @@ const MAX_ENGINE_FORCE = 175
 const MAX_BRAKE_FORCE = 10
 const MAX_SPEED = 30
 
-
 var steer_target = 0.0 # where i want the wheels to go
 var steer_angle = 0.0 # where the wheels are now
 
+sync var players = {}
+var player_data = {
+	"steer": 0,
+	"engine": 0,
+	"brakes": 0,
+	"position": null
+}
+
+
+
+func _ready() -> void:
+	players[name] = player_data
+	players[name].position = transform
+
+	if not is_local_player():
+		$Camera.queue_free()
+
+
+func is_local_player() -> bool:
+	return name == str(Network.local_player_id)
+
 
 func _physics_process(delta: float) -> void:
-	drive(delta)
+	if is_local_player():
+		drive(delta)
+	if not Network.local_player_id == 1:
+		transform = players[name].position
+
+	steering = players[name].steer
+	engine_force = players[name].engine
+	brake = players[name].brakes
 
 
 func drive(delta) -> void:
-	steering = apply_steering(delta)
-	engine_force = apply_throttle()
-	brake = apply_brakes()
+	var steering_val = apply_steering(delta)
+	var throttle = apply_throttle()
+	var brakes = apply_brakes()
+
+	update_server(name, steering_val, throttle, brakes)
 
 
 func apply_steering(delta):
@@ -63,3 +92,18 @@ func apply_brakes():
 	if brake_strength:
 		brake_val = brake_strength
 	return brake_val * MAX_BRAKE_FORCE
+
+
+func update_server(id, steering_val, throttle, brakes):
+	if not Network.local_player_id == 1:
+		rpc_unreliable_id(1, "manage_clients", id, steering_val, throttle, brakes)
+	else:
+		manage_clients(id, steering_val, throttle, brakes)
+
+
+sync func manage_clients(id, steering_val, throttle, brakes):
+	players[id].steer = steering_val
+	players[id].engine = throttle
+	players[id].brakes = brakes
+	players[id].position = transform
+	rset_unreliable("players", players)
