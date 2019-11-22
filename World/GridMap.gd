@@ -5,9 +5,11 @@ const E = 2
 const S = 4
 const W = 8
 
-var width = 20
-var height = 20
-var spacing = 1
+var width = 23
+var height = 23
+var spacing = 2
+
+var erase_fraction = 0.2
 
 var cell_walls = {
 	Vector3(0, 0, -spacing): N,
@@ -27,6 +29,7 @@ func _ready() -> void:
 func make_map() -> void:
 	make_blank_map()
 	make_maze()
+	erase_walls()
 
 
 func make_blank_map() -> void:
@@ -68,9 +71,46 @@ func make_maze() -> void:
 
 			set_cell_item(current.x, 0, current.z, current_walls, 0)
 			set_cell_item(next.x, 0, next.z, next_walls, 0)
+			fill_gaps(current, dir)
 
 			current = next
 			unvisited.erase(current)
 
 		elif stack:
 			current = stack.pop_back()
+
+
+func fill_gaps(current, dir):
+	var tile_type
+	for i in range(1, spacing):
+		if dir.x > 0:
+			tile_type = 5
+			current.x += 1
+		elif dir.x < 0:
+			tile_type = 5
+			current.x -= 1
+		elif dir.z > 0:
+			tile_type = 10
+			current.z += 1
+		elif dir.z < 0:
+			tile_type = 10
+			current.z -= 1
+		set_cell_item(current.x, 0, current.z, tile_type, 0)
+
+
+func erase_walls() -> void:
+	for i in range(width * height * erase_fraction):
+		var x = int(rand_range(1, (width-1)/spacing)) * spacing
+		var z = int(rand_range(1, (height-1)/spacing)) * spacing
+		var cell = Vector3(x,0,z)
+		var current_cell = get_cell_item(cell.x, cell.y, cell.z)
+		var neighbour = cell_walls.keys()[randi() % cell_walls.size()]
+
+		if current_cell & cell_walls[neighbour]:
+			var walls = current_cell - cell_walls[neighbour]
+			var neighbour_walls = get_cell_item((cell+neighbour).x, 0,
+					(cell+neighbour).z) - cell_walls[-neighbour]
+
+			set_cell_item(cell.x, 0, cell.z, walls, 0)
+			set_cell_item((cell+neighbour).x, 0, (cell+neighbour).z, neighbour_walls, 0)
+			fill_gaps(cell, neighbour)

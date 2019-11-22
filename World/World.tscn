@@ -23,6 +23,6 @@ __meta__ = {
 }
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 100, 500, 100 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 200, 500, 200 )
 current = true
 far = 1000.0
