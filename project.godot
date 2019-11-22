@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 Network="*res://Networking/Network.gd"
 SaveGame="*res://SaveGame/SaveGame.gd"
 
+[display]
+
+window/vsync/use_vsync=false
+
 [input]
 
 forward={
@@ -54,5 +58,6 @@ brake={
 
 [rendering]
 
-quality/filters/msaa=3
+threads/thread_model=2
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"
