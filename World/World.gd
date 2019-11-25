@@ -9,6 +9,10 @@ func _ready() -> void:
 	pass
 
 
+func _process(delta: float) -> void:
+	$CanvasLayer/FPSLabel.text = str(Engine.get_frames_per_second())
+
+
 func spawn_local_player():
 	var new_player = preload("res://Player/Player.tscn").instance()
 	new_player.name = str(Network.local_player_id)

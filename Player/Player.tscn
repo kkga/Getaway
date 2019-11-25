@@ -94,9 +94,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.0416478, 1.522 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.45
-wheel_rest_length = 0.25
-suspension_travel = 1.5
-suspension_stiffness = 7.0
+wheel_rest_length = 0.3
+suspension_travel = 1.0
+suspension_stiffness = 8.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFL"]
 transform = Transform( 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 0, -2.6077e-08, 0 )
@@ -111,9 +111,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.0416478, 1.522 )
 use_as_traction = true
 use_as_steering = true
 wheel_radius = 0.45
-wheel_rest_length = 0.25
-suspension_travel = 1.5
-suspension_stiffness = 7.0
+wheel_rest_length = 0.3
+suspension_travel = 1.0
+suspension_stiffness = 8.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFR"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -2.6077e-08, 0 )
@@ -126,9 +126,9 @@ material/2 = null
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.0416478, -1.171 )
 wheel_radius = 0.45
-wheel_rest_length = 0.25
-suspension_travel = 1.5
-suspension_stiffness = 7.0
+wheel_rest_length = 0.3
+suspension_travel = 1.0
+suspension_stiffness = 8.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRL"]
 transform = Transform( 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, 1, 0, -2.98023e-08, 0 )
@@ -141,9 +141,9 @@ material/2 = null
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.0416478, -1.171 )
 wheel_radius = 0.45
-wheel_rest_length = 0.25
-suspension_travel = 1.5
-suspension_stiffness = 7.0
+wheel_rest_length = 0.3
+suspension_travel = 1.0
+suspension_stiffness = 8.0
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRR"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -2.23517e-08, 0 )

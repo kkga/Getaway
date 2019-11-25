@@ -76,6 +76,7 @@ stream = ExtResource( 5 )
 unit_db = 5.0
 max_db = 5.0
 max_distance = 20.0
+bus = "SFX"
 doppler_tracking = 2
 [connection signal="body_entered" from="." to="." method="_on_Cone__body_entered"]
 [connection signal="sleeping_state_changed" from="." to="." method="_on_Cone__sleeping_state_changed"]

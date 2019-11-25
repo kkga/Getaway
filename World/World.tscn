@@ -29,3 +29,12 @@ __meta__ = {
 [node name="Border" parent="GridMap" instance=ExtResource( 4 )]
 
 [node name="ObjectSpawner" parent="GridMap" instance=ExtResource( 5 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FPSLabel" type="Label" parent="CanvasLayer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 54.0
+margin_bottom = 24.0
+text = "FPS"
