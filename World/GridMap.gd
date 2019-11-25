@@ -45,15 +45,27 @@ func make_blank_map() -> void:
 		for z in height:
 			var possible_rotations = [0, 10, 16, 22]
 			var building_rotation = possible_rotations[randi () % 4]
-			var building = pick_building()
-#			set_cell_item(x, 0, z, building, building_rotation)
+			var building = pick_building(x, z)
 			rpc("place_cell", x, z, building, building_rotation)
 
 
-func pick_building():
+func pick_building(x, z):
 	var chance_of_skyscraper = 1
 	var skyscraper = 16
-	var possible_buildings = [17, 18]
+
+	var nbrhood_1 = [17,18,19]
+	var nbrhood_2 = [20,21,22]
+	var nbrhood_3 = [23,24,25]
+
+	var possible_buildings
+
+	if x >= width/2 and z >= height/2:
+		possible_buildings = nbrhood_1
+	elif x <= width/2 and z <= height/2:
+		possible_buildings = nbrhood_2
+	else:
+		possible_buildings = nbrhood_3
+
 	var building
 	if (randi() % 99) + 1 <= chance_of_skyscraper:
 		building = skyscraper

@@ -93,18 +93,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 17, -10 )
 
 [node name="ScaffoldBar" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0, 6.449, -9 )
-sleeping = true
 
 [node name="ScaffoldBar2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, 0, 12.449, -9 )
-sleeping = true
 
 [node name="ScaffoldBar3" parent="." instance=ExtResource( 5 )]
 transform = Transform( -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, 0, 9.48248, -9 )
-sleeping = true
 
 [node name="ScaffoldBar4" parent="." instance=ExtResource( 5 )]
 transform = Transform( -0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, 0, 15.4825, -9 )
-sleeping = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="sleeping_state_changed" from="ScaffoldPole" to="." method="_on_ScaffoldPole_sleeping_state_changed"]
