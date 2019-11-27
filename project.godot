@@ -24,6 +24,10 @@ config/icon="res://icon.png"
 Network="*res://Networking/Network.gd"
 SaveGame="*res://SaveGame/SaveGame.gd"
 
+[display]
+
+window/vsync/use_vsync=false
+
 [input]
 
 forward={

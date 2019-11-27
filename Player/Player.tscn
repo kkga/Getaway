@@ -67,17 +67,17 @@ surfaces/3 = {
 points = PoolVector3Array( -1, 0.5, -1.97812, -1, 0.5, 1.97812, -0.977528, -0.5, -1.93416, -0.977528, -0.5, 1.93416, 1, -0.5, -1.93416, 1, -0.5, 1.93416, 1, 0.488764, -1.93416, 1, 0.488764, 1.93416 )
 
 [node name="Player" type="VehicleBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.447017, 0 )
-mass = 122.449
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971844, 0 )
+mass = 102.041
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -1, -2.51218e-08, 8.37355e-08, 0, 0.957823, 0.28736, -8.74228e-08, 0.28736, -0.957823, 0, 6.532, -9.432 )
+transform = Transform( -1, 5.01437e-08, -7.16125e-08, 0, 0.819152, 0.573577, 8.74228e-08, 0.573577, -0.819152, 0, 10, -10 )
 doppler_tracking = 2
 current = true
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.088221, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107288, 0 )
 mesh = SubResource( 2 )
 material/0 = null
 material/1 = null
@@ -85,18 +85,18 @@ material/2 = null
 material/3 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007658, 0.583734, 3.05176e-05 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007658, 0.744745, 3.05176e-05 )
 shape = SubResource( 3 )
 
 [node name="WheelFL" type="VehicleWheel" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.0416478, 1.522 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.121307, 1.522 )
+engine_force = 0.899057
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 0.45
-wheel_rest_length = 0.3
-suspension_travel = 1.0
-suspension_stiffness = 8.0
+suspension_travel = 0.5
+suspension_stiffness = 5.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFL"]
 transform = Transform( 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 0, -2.6077e-08, 0 )
@@ -106,14 +106,14 @@ material/1 = null
 material/2 = null
 
 [node name="WheelFR" type="VehicleWheel" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.0416478, 1.522 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.121307, 1.522 )
+engine_force = 0.899057
 use_as_traction = true
 use_as_steering = true
-wheel_radius = 0.45
-wheel_rest_length = 0.3
-suspension_travel = 1.0
-suspension_stiffness = 8.0
+suspension_travel = 0.5
+suspension_stiffness = 5.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelFR"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -2.6077e-08, 0 )
@@ -123,12 +123,12 @@ material/1 = null
 material/2 = null
 
 [node name="WheelRL" type="VehicleWheel" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.0416478, -1.171 )
-wheel_radius = 0.45
-wheel_rest_length = 0.3
-suspension_travel = 1.0
-suspension_stiffness = 8.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85, -0.121307, -1.171 )
+engine_force = 0.658601
+suspension_travel = 0.5
+suspension_stiffness = 5.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRL"]
 transform = Transform( 1, -8.74228e-08, 0, 8.74228e-08, 1, 0, 0, 0, 1, 0, -2.98023e-08, 0 )
@@ -138,12 +138,12 @@ material/1 = null
 material/2 = null
 
 [node name="WheelRR" type="VehicleWheel" parent="."]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.0416478, -1.171 )
-wheel_radius = 0.45
-wheel_rest_length = 0.3
-suspension_travel = 1.0
-suspension_stiffness = 8.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, -0.121307, -1.171 )
+engine_force = 0.899057
+suspension_travel = 0.5
+suspension_stiffness = 5.0
+damping_compression = 0.3
+damping_relaxation = 0.5
 
 [node name="MeshInstance" type="MeshInstance" parent="WheelRR"]
 transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, -2.23517e-08, 0 )

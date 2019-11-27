@@ -64,6 +64,7 @@ func pick_building(x, z):
 	elif x <= width/2 and z <= height/2:
 		possible_buildings = nbrhood_2
 	else:
+
 		possible_buildings = nbrhood_3
 
 	var building
