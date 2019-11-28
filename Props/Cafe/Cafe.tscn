@@ -4,6 +4,7 @@
 [ext_resource path="res://Props/Cafe/CafeChair.tscn" type="PackedScene" id=2]
 
 [node name="Cafe" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54015, 0 )
 
 [node name="CafeTable " parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.725374, 0, -0.688354, 0, 1, 0, 0.688354, 0, -0.725374, -3.11032, 0.51, 1.93834 )

@@ -18,7 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100898, 0.151932, 0.0603638
 mesh_library = ExtResource( 2 )
 cell_size = Vector3( 20, 1, 20 )
 data = {
-"cells": PoolIntArray(  )
+"cells": PoolIntArray( 1, 65534, 19, 65535, 65534, 19 )
 }
 script = ExtResource( 3 )
 __meta__ = {

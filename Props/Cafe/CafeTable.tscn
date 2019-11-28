@@ -61,6 +61,10 @@ points = PoolVector3Array( -0.907377, -0.0374988, -0.0367712, -0.907377, -0.0374
 
 [node name="CafeTable " type="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507463, 0 )
+continuous_cd = true
+contacts_reported = 1
+contact_monitor = true
+sleeping = true
 script = ExtResource( 3 )
 
 [node name="CafeTable " type="MeshInstance" parent="."]
