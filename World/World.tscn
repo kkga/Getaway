@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://World/World.gd" type="Script" id=1]
 [ext_resource path="res://Tiles/city4.meshlib" type="MeshLibrary" id=2]
 [ext_resource path="res://World/GridMap.gd" type="Script" id=3]
 [ext_resource path="res://World/Border.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World/ObjectSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Props/Zeppelin/Zeppelin.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Spatial" groups=[
 "game_state",
@@ -39,3 +40,5 @@ margin_top = 10.0
 margin_right = 54.0
 margin_bottom = 24.0
 text = "FPS"
+
+[node name="Zeppelin " parent="." instance=ExtResource( 6 )]
